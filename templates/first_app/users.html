@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+  </head>
+  <body>
+    <!-- <div>
+      <h2>User List</h2>
+      {% if user_records %}
+        <table>
+          <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </thead>
+          {% for usr in user_records %}
+            <tr>
+              <td>{{ usr.first_name }}</td>
+              <td>{{ usr.last_name }}</td>
+              <td>{{ usr.e_mail }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+        {% else %}
+          <p>No user record</p>
+        {% endif %}
+    </div> -->
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Welcome</h1>
+        <h2>Please sign up here</h2>
+        <form method="POST">
+           {{ form.as_p }}
+           {% csrf_token %}
+           <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

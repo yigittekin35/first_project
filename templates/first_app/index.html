@@ -4,11 +4,35 @@
   <head>
     <meta charset="utf-8">
     <title>First App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
   </head>
   <body>
-    <h1>Hello this is index.html</h1>
-    {{ insert_me }}
-    <img src="{% static "images/example.jpg" %}" title="Example Picture">
+    <!-- <h1>Hello this is index.html</h1> -->
+    <!-- {{ insert_me }} -->
+    <h2>Go to /formpage to fill out the form</h2>
+    <h2>Go to /users to sign up</h2>
+    <h2>Here are your access records</h2>
+    <div class="container">
+      <div class="jumbotron">
+        {% if access_records %}
+         <table>
+           <thead>
+             <th>Site Name</th>
+             <th>Access Date</th>
+           </thead>
+           {% for acc in access_records %}
+           <tr>
+             <td>{{ acc.name }}</td>
+             <td>{{ acc.date }}</td>
+           </tr>
+           {% endfor %}
+         </table>
+         {% else %}
+            <p>No access records</p>
+         {% endif %}
+      </div>
+    </div>
+    <!-- <img src="{% static "images/example.jpg" %}" title="Example Picture"> -->
   </body>
 </html>
