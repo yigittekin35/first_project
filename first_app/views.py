@@ -8,7 +8,8 @@ def index(request):
     webpage_list = AccessRecord.objects.order_by('date')
     date_dict = {'access_records': webpage_list}
     # my_dict = {'insert_me': 'Hello I am from views.py'}
-    return render(request, 'first_app/index.html', context = date_dict)
+    context_dict = {'text': 'Hello World', 'number': 100}
+    return render(request, 'first_app/index.html', context = context_dict)
 
 def help(request):
     help_dict = {'insert_me': 'Hello I am from views.py'}
@@ -40,3 +41,9 @@ def form_name_view(request):
             print('Text: ' + form.cleaned_data['text'])
 
     return render(request, 'first_app/form_page.html', {'form': form})
+
+def other(request):
+    return render(request, 'first_app/other.html')
+
+def relative(request):
+    return render(request, 'first_app/relative_url_templates.html')

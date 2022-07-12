@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+<!-- {% load my_extras %} -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -10,6 +11,8 @@
   <body>
     <!-- <h1>Hello this is index.html</h1> -->
     <!-- {{ insert_me }} -->
+    <h2>{{ text|cut:'hello' }}</h2>
+    <h2>{{ number|add:"5" }}</h2>
     <h2>Go to /formpage to fill out the form</h2>
     <h2>Go to /users to sign up</h2>
     <h2>Here are your access records</h2>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Relative</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Welcome to Relative Url Templates</h1>
+    <a href="{% url 'first_app:other' %}">The Other Page</a>
+    <br>
+    <!-- Admin paneli -->
+    <!-- settings.py içerisinden bakılabilir -->
+    <a href="{% url 'admin:index' %}">Admin</a>
+  </body>
+</html>
