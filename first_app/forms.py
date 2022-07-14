@@ -7,6 +7,7 @@ def check_for_z(value):
     if value[0].lower() != 'z':
         raise forms.ValidationError('Name needs to start with Z')
 
+# Django Form
 class FormName(forms.Form):
     name = forms.CharField(validators = [check_for_z])
     email = forms.EmailField()
@@ -30,9 +31,10 @@ class FormName(forms.Form):
     #         raise forms.ValidationError('Gotcha Bot!')
     #     return botcatcher
 
+# Model Form
 class NewUser(forms.ModelForm):
     #Örnek validators
-    # first_name = forms.CharField(validators: [check_for_z])
+    # first_name = forms.CharField(validators= [check_for_z])
     class Meta:
         model = User
         #Tüm alanları kullanmak için __all__ kullanılıyor
